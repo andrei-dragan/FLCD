@@ -11,7 +11,7 @@ SymbolTable::Node* SymbolTable::createNewNode(std::string key) {
 }
 
 bool SymbolTable::add(std::string key) {
-	if (root == NULL) {
+	if (!root) {
 		root = createNewNode(key);
 		return true;
 	}
