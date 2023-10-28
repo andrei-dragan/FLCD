@@ -127,10 +127,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="lexicalAnalyzer.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="symbolTable.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="lexicalAnalyzer.h" />
     <ClInclude Include="symbolTable.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

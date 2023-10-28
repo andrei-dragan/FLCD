@@ -1,0 +1,16 @@
+start 
+   int $n;
+   read($n);
+   
+   int $sum;
+   $sum = 0;
+
+   int $x; 
+
+   while ($n > 0) {
+       read($x);
+       $sum = $sum + $x;   
+       $n = $n - 1;
+   }
+   write($sum);
+end 

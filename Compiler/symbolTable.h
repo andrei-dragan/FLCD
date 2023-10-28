@@ -1,6 +1,9 @@
 #pragma once
 
 #include <string>
+#include <vector>
+#include <queue>
+#include <algorithm>
 
 class SymbolTable {
 private:
@@ -77,4 +80,6 @@ public:
 		If at some point we want to go to the left child / right child but we can't since it is NULL, it means our searched key is not inside the BST so we return -1
 	*/
 	int getId(std::string key);
+	
+	std::vector<std::pair<std::string, int>> getEntries();
 };

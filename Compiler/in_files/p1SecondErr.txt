@@ -1,0 +1,13 @@
+start
+    int $a; 
+    int $b;
+
+    read($a); 
+    read($b);
+
+    int $sum;
+    $sum = $a + $b;
+    
+    $sum = $sum + 2,3;
+    write($sum);      
+end

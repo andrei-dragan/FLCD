@@ -1,9 +1,8 @@
-#include <string>
 #include "symbolTable.h"
 
 SymbolTable::SymbolTable() {
 	root = NULL;
-	uniqueId = 0;
+	uniqueId = 1;
 }
 
 SymbolTable::Node* SymbolTable::createNewNode(std::string key) {
@@ -64,4 +63,29 @@ int SymbolTable::getId(std::string key) {
 	}
 
 	return -1;
+}
+
+std::vector<std::pair<std::string, int>> SymbolTable::getEntries() {
+	std::vector<std::pair<std::string, int>> answer;
+	std::queue<Node*> q;
+
+	if (root == NULL) return {};
+
+	q.push(root);
+	while (!q.empty()) {
+		Node* currNode = q.front();
+		q.pop();
+
+		answer.push_back({ currNode->key, currNode->id });
+
+		if (currNode->left != NULL) q.push(currNode->left);
+		if (currNode->right != NULL) q.push(currNode->right);
+	}
+
+	// sort ascending by id
+	std::sort(answer.begin(), answer.end(), [](std::pair<std::string, int>& A, std::pair<std::string, int>& B) {
+		return (A.second < B.second);
+	});
+
+	return answer;
 }

@@ -1,0 +1,10 @@
+start
+   char $q;
+   $q = '4';
+   $q = 'x';
+
+   float $f;
+   $f = 3.4;
+
+   array with 5 int $arr;
+end

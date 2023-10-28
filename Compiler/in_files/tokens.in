@@ -1,0 +1,3 @@
+; [ ] { } ( )
++ - * / % = == != < > <= >=
+int float char bool array of with while for if else read write start end
