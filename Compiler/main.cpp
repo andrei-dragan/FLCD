@@ -1,6 +1,7 @@
 #include <iostream>
 #include "symbolTable.h"
 #include "lexicalAnalyzer.h"
+#include "FiniteAutomata.h"
 
 void testSymbolTable() {
 	SymbolTable t;
@@ -20,8 +21,7 @@ void testSymbolTable() {
 	std::cout << "We should get 2: " << t.getId("identifier3") << '\n';
 }
 
-int main() {
-
+void testScanner() {
 	LexicalAnalyzer l1("in_files/tokens.in", "in_files/p1.txt", "out_files/p1/");
 	std::cout << "For program 1: " << '\n';
 	l1.parseProgram();
@@ -51,6 +51,18 @@ int main() {
 	std::cout << "For program with second error: " << '\n';
 	lSecondErr.parseProgram();
 	std::cout << '\n';
+}
+
+void testFiniteAutomata() {
+	FiniteAutomata fa("in_files/FA.in");
+	fa.run();
+}
+
+int main() {
+
+	//testSymbolTable();
+	//testFiniteAutomata();
+	//testScanner();
 
 	return 0;
 }

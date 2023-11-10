@@ -127,11 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="finiteAutomata.cpp" />
     <ClCompile Include="lexicalAnalyzer.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="symbolTable.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="finiteAutomata.h" />
     <ClInclude Include="lexicalAnalyzer.h" />
     <ClInclude Include="symbolTable.h" />
   </ItemGroup>

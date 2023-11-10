@@ -1,4 +1,5 @@
 #include "lexicalAnalyzer.h"
+#include "FiniteAutomata.h"
 
 std::vector<std::string> LexicalAnalyzer::parseInLine(std::string line, std::vector<std::string> separatorList, bool addSeparator) {
 	std::vector<std::string> answer;
@@ -86,18 +87,20 @@ void LexicalAnalyzer::parsePredefinedTokens() {
 }
 
 bool LexicalAnalyzer::isIdentifier(std::string token) {
-	std::regex identifierRegex("^\\$[a-zA-Z][a-zA-Z]*$");
-	return std::regex_match(token, identifierRegex);
+	FiniteAutomata identifierFA("in_files/identifierFA.in");
+	return (identifierFA.canObtainGivenSequence(token));
 }
 
 LexicalAnalyzer::ConstantType LexicalAnalyzer::isConstant(std::string token) {
+	FiniteAutomata constIntegerFA("in_files/constIntegerFA.in");
+
 	std::regex integerRegex("^(-?[1-9][0-9]*|0)$");
 	std::regex floatRegex("^(-?[1-9][0-9]*|0)\\.([1-9][0-9]*|0)$");
 	std::regex charRegex("^'([0-9a-zA-Z_\\,\\.\\s\\n\\?\\-])'$");
 	std::regex boolRegex("^(true|false)$");
 
 	// check for each constant type
-	if (std::regex_match(token, integerRegex)) return CONSTANT_INTEGER;
+	if (constIntegerFA.canObtainGivenSequence(token)) return CONSTANT_INTEGER;
 	else if (std::regex_match(token, floatRegex)) return CONSTANT_FLOAT;
 	else if (std::regex_match(token, charRegex)) return CONSTANT_CHAR;
 	else if (std::regex_match(token, boolRegex)) return CONSTANT_BOOL;
