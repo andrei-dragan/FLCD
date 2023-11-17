@@ -62,8 +62,7 @@ int main() {
 
 	//testSymbolTable();
 	//testFiniteAutomata();
-	//testScanner();
-
+	testScanner();
 	return 0;
 }
 

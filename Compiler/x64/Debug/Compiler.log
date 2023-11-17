@@ -1,6 +1,2 @@
-﻿  lexicalAnalyzer.cpp
-D:\Semester V\Formal Languages and Compiler Design\Compiler\Compiler\lexicalAnalyzer.cpp(11,42): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-D:\Semester V\Formal Languages and Compiler Design\Compiler\Compiler\lexicalAnalyzer.cpp(41,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  main.cpp
-  Generating Code...
+﻿  main.cpp
   Compiler.vcxproj -> D:\Semester V\Formal Languages and Compiler Design\Compiler\Compiler\x64\Debug\Compiler.exe
