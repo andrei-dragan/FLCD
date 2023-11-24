@@ -136,6 +136,7 @@ void LexicalAnalyzer::parseProgram() {
 				std::find(delimiters.begin(), delimiters.end(), token) != delimiters.end() ||
 				std::find(keywords.begin(), keywords.end(), token) != keywords.end()
 			) {
+				if (token == " " || token == "\n" || token == "\t" || token == std::to_string(EOF)) continue; 
 				pif.push_back({ token, "0" });
 			}
 			else if (isConstant(token) != CONSTANT_INVALID) {
@@ -148,7 +149,7 @@ void LexicalAnalyzer::parseProgram() {
 				if (!st.search(token)) st.add(token);
 			
 				int index = st.getId(token);
-				pif.push_back({ "id", std::to_string(index)});
+				pif.push_back({ "identifier", std::to_string(index)});
 			}
 			else {
 				std::cout << "Lexical error at line " << lineId << " for the following token: " << token << '\n';

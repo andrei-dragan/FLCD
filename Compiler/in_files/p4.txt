@@ -1,10 +1,16 @@
 start
-   char $q;
-   $q = '4';
-   $q = 'x';
+  int $a;
+  int $b;
+  int $c;
 
-   float $f;
-   $f = -23;
+  read($a);
+  read($b);
 
-   array with 5 int $arr;
+  while ($b != 0) {
+      $c = $a % $b;
+      $a = $b
+      $b = $c;  
+  }
+
+  write($a);
 end

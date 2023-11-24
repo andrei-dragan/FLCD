@@ -130,11 +130,17 @@
     <ClCompile Include="finiteAutomata.cpp" />
     <ClCompile Include="lexicalAnalyzer.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="contextFreeGrammar.cpp" />
+    <ClCompile Include="parser.cpp" />
+    <ClCompile Include="parserOutput.cpp" />
     <ClCompile Include="symbolTable.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="finiteAutomata.h" />
     <ClInclude Include="lexicalAnalyzer.h" />
+    <ClInclude Include="contextFreeGrammar.h" />
+    <ClInclude Include="parser.h" />
+    <ClInclude Include="parserOutput.h" />
     <ClInclude Include="symbolTable.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

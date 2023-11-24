@@ -1,5 +1,9 @@
 #include "FiniteAutomata.h"
 
+FiniteAutomata::FiniteAutomata(std::string inFile) {
+	parseFile(inFile);
+}
+
 std::vector<std::string> FiniteAutomata::separateByDelimiter(std::string line, char delimiter) {
 	std::vector<std::string> answer;
 	int nextDelimiterPos = 0;
@@ -51,8 +55,6 @@ void FiniteAutomata::parseFile(std::string inFile) {
 	std::getline(inputFile, line);
 	std::vector<std::string> unparsedTransitions = separateByDelimiter(line, ' ');
 	buildTransitions(unparsedTransitions);
-
-	
 }
 
 void FiniteAutomata::printMenu() {

@@ -55,10 +55,7 @@ private:
 	bool canObtainSequence(std::string sequenceSoFar, std::string finalSequence, std::string currentState);
 
 public: 
-	FiniteAutomata(std::string inFile) {
-		parseFile(inFile);
-	}
-
+	FiniteAutomata(std::string inFile);
 	void parseFile(std::string inFile);
 	void run();
 	bool canObtainGivenSequence(std::string sequence);
