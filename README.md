@@ -1,3 +1,3 @@
-# FLCD
+# Compiler
 
-This is a lightweight version of a custom compiler built in C++.
+A lightweight custom compiler built in C++
